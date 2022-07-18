@@ -14,25 +14,19 @@ export default createRouter({
       meta: {
         // 로그인헤야만 접속 할 수 있게 설정
         auth: true
-      },
-      children: [
-        {
-          path: '',
-          component: () => import('~/components/MyPage/MyMain.vue')
-        },
-        {
-          path: 'buying',
-          component: () => import('~/components/MyPage/MyBuying.vue')
-        },
-        {
-          path: 'profile',
-          component: () => import('~/components/MyPage/MyProfile.vue')
-        },
-        {
-          path: 'account',
-          component: () => import('~/components/MyPage/MyAccount.vue')
-        },
-      ]
+      }
+    },
+    {
+      path: '/admin/products',
+     component: () => import('~/components/Products.vue')
+    },
+    {
+      path: '/admin/products/add',
+      component: () => import('~/components/AddProduct.vue')
+    },
+    {
+      path: '/admin/products/edit',
+      component: () => import('~/components/EditProduct.vue')
     },
     {
       path: '/login',
@@ -44,7 +38,7 @@ export default createRouter({
     },
     {
       path: '/search',
-      component: () => import('~/components/Search.vue')
+      component: () => import('~/components/search/Search.vue')
     },
     {
       path: '/admin',
